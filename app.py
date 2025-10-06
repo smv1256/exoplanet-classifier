@@ -16,9 +16,9 @@ features = ["Orbital Period [days]", "Impact Parameter", "Transit Duration", "Tr
 inputFeat = []
 
 for feature in features:
-    inputFeat.append(st.number_input(label = f"{feature}: ", min_value = -0.00001, format = "%0.5f", key = feature))
+    inputFeat.append(st.number_input(label = f"{feature}: ", min_value = 0.00000, value = None, format = "%0.5f", key = feature))
 
-if (all(inputFeat)):
+if (all(i is not None for i in inputFeat)):
     try:
         result = "Exoplanet" if (rf.predict([inputFeat]) == 1) else "Not exoplanet"
         st.header("> > " + result)
