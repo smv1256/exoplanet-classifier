@@ -16,7 +16,7 @@ features = ["Orbital Period [days]", "Impact Parameter", "Transit Duration", "Tr
 inputFeat = []
 
 for feature in features:
-    inputFeat.append(st.number_input(label = f"{feature}: ", min_value = 0.00000, format = "%0.5f", key = feature))
+    inputFeat.append(st.number_input(label = f"{feature}: ", min_value = -0.00001, format = "%0.5f", key = feature))
 
 if (all(inputFeat)):
     try:
