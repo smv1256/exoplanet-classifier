@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_js_eval as s
 import joblib
 
 st.set_page_config(
@@ -27,4 +26,3 @@ if (all(inputFeat)):
         st.warning("Please enter valid numeric values for all features.")
 else:
     st.info("Please fill in all input values to get a prediction!")
-    
