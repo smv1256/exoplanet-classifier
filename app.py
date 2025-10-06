@@ -12,7 +12,7 @@ with open("model/rf_model.pkl", "rb") as m:
 
 st.title("Exoplanet Classifier")
 
-features = ["Orbital Period [days]", "Impact Parameter", "Transit Duration", "Transit Depth [ppm]", "Planetary Radius [Earth radii]", "Transit Signal-to-Noise", "Stellar Effective Temperature [K]", "Stellar Surface Gravity [log10(cm/s^2)]", "Stellar Radius [Solar radii]", "Not Transit-Like False Positive Flag", "Centroid Offset False Positive Flag", "Stellar Eclipse False Positive Flag", " Ephemeris Match Indicates Contamination False Positive Flag"]
+features = ["Orbital Period [days]", "Impact Parameter", "Transit Duration", "Transit Depth [ppm]", "Planetary Radius [Earth radii]", "Transit Signal-to-Noise", "Stellar Effective Temperature [K]", "Stellar Surface Gravity [log10(cm/s^2)]", "Stellar Radius [Solar radii]", "Not Transit-Like False Positive Flag", "Centroid Offset False Positive Flag", "Stellar Eclipse False Positive Flag", "Ephemeris Match Indicates Contamination False Positive Flag"]
 inputFeat = []
 
 for feature in features:
@@ -21,7 +21,7 @@ for feature in features:
 if (all(inputFeat)):
     try:
         result = "Exoplanet" if (rf.predict([inputFeat]) == 1) else "Not exoplanet"
-        st.header("> >" + result)
+        st.header("> > " + result)
     except ValueError:
         st.warning("Please enter valid numeric values for all features.")
 else:
