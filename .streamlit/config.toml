@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+
+[client]
+showSidebarNavigation = false
+showToolbar = false
+showSettings = false
